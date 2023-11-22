@@ -1,0 +1,7 @@
+# Ignore all files by default
+*
+
+# But include the dist directory and package.json
+!/dist/
+!/dist/index.d.ts
+!package.json
