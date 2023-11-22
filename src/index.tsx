@@ -7,17 +7,17 @@ type props = {
   vertical_padding?: number;
   scale?: number;
 };
-const Loader: FC<props> = (props) => {
+const Loading: FC<props> = (props) => {
   let {template_name, primary_color, secondary_color, full_width, vertical_padding, scale} = props;
   if (!template_name) template_name = 'frcms';
   if (!primary_color) primary_color = '#FF3D00';
   if (!secondary_color) secondary_color = '#FFF';
-  const componentPath = `./components/${template_name}`;
+  const componentPath = `./components/${template_name}/index.tsx`;
   let DynamicComponent;
   try {
     DynamicComponent = require(componentPath).default;
-  } catch {
-    console.log('error', componentPath);
+  } catch (error) {
+    console.log('error', error);
   }
   if (!DynamicComponent) return null;
   return (
@@ -26,4 +26,4 @@ const Loader: FC<props> = (props) => {
     </div>
   );
 };
-export default Loader;
+export default Loading;
