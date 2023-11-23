@@ -5,12 +5,12 @@
     "declarationDir": "./dist",
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
-    "module": "es6",
     "target": "es5",
     "jsx": "react",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "module": "es2020",
     "typeRoots": ["./node_modules/@types", "./src/@types"]
   },
   "include": ["src/**/*", "src/**/*.svg", "declarations.d.ts"],

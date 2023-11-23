@@ -5,4 +5,5 @@
 
 # production
 /dist
-/*tree-renderer*.tgz
+/*react-css-loadings*.tgz
+/package-lock.json
