@@ -1,5 +1,5 @@
 import React, {FC, Suspense, lazy} from 'react';
-const TEMPLATES_NAMES = ['frcms', 'temp3'] as const;
+const TEMPLATES_NAMES = ['frcms', 'temp3', 'LoadingType1'] as const;
 type props = {
   template_name?: (typeof TEMPLATES_NAMES)[number];
   primary_color?: string;
