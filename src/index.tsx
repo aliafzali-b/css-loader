@@ -1,5 +1,5 @@
-import React, {FC, Suspense, lazy} from 'react';
-const TEMPLATES_NAMES = ['frcms', 'temp3', 'LoadingType1'] as const;
+import React, {FC} from 'react';
+const TEMPLATES_NAMES = ['frcms', 'LoadingType1'] as const;
 type props = {
   template_name?: (typeof TEMPLATES_NAMES)[number];
   primary_color?: string;
@@ -27,21 +27,19 @@ const Loading: FC<props> = (props) => {
   const componentPath = `components/${template_name}`;
   let DynamicComponent;
   try {
-    DynamicComponent = lazy(() => import(`./${componentPath}/index.tsx`));
+    DynamicComponent = require(`./${componentPath}/index.tsx`);
   } catch (error) {
     console.log('error', error);
   }
   if (!DynamicComponent) return null;
   return (
     <div className='react-css-loadings'>
-      <Suspense fallback={null}>
-        <DynamicComponent
-          width={width}
-          height={height}
-          primary_color={primary_color}
-          secondary_color={secondary_color}
-        />
-      </Suspense>
+      <DynamicComponent
+        width={width}
+        height={height}
+        primary_color={primary_color}
+        secondary_color={secondary_color}
+      />
     </div>
   );
 };
