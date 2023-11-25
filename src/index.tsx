@@ -13,10 +13,10 @@ const Loading: FC<props> = (props) => {
   if (!template_name) template_name = 'frcms';
   if (!primary_color) primary_color = '#FF3D00';
   if (!secondary_color) secondary_color = '#FFF';
-  const componentPath = `./components/${template_name}`;
+  const componentPath = `components/${template_name}`;
   let DynamicComponent;
   try {
-    DynamicComponent = lazy(() => import(componentPath));
+    DynamicComponent = lazy(() => import(`./${componentPath}`));
   } catch (error) {
     console.log('error', error);
   }
