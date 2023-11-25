@@ -27,7 +27,7 @@ const Loading: FC<props> = (props) => {
   const componentPath = `components/${template_name}`;
   let DynamicComponent;
   try {
-    DynamicComponent = lazy(() => import(`./${componentPath}`));
+    DynamicComponent = lazy(() => import(`./${componentPath}/index.tsx`));
   } catch (error) {
     console.log('error', error);
   }
