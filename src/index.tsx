@@ -27,7 +27,7 @@ const Loading: FC<props> = (props) => {
   const componentPath = `components/${template_name}`;
   let DynamicComponent;
   try {
-    DynamicComponent = require(`./${componentPath}/index.tsx`);
+    DynamicComponent = require(`./${componentPath}/index.tsx`).default;
   } catch (error) {
     console.log('error', error);
   }
