@@ -7,9 +7,20 @@ type props = {
   full_width?: boolean;
   vertical_padding?: number;
   scale?: number;
+  width?: string;
+  height?: string;
 };
 const Loading: FC<props> = (props) => {
-  let {template_name, primary_color, secondary_color, full_width, vertical_padding, scale} = props;
+  let {
+    template_name,
+    primary_color,
+    secondary_color,
+    full_width,
+    vertical_padding,
+    scale,
+    width,
+    height,
+  } = props;
   if (!template_name) template_name = 'frcms';
   if (!primary_color) primary_color = '#FF3D00';
   if (!secondary_color) secondary_color = '#FFF';
@@ -24,7 +35,12 @@ const Loading: FC<props> = (props) => {
   return (
     <div className='react-css-loadings'>
       <Suspense fallback={null}>
-        <DynamicComponent primary_color={primary_color} secondary_color={secondary_color} />
+        <DynamicComponent
+          width={width}
+          height={height}
+          primary_color={primary_color}
+          secondary_color={secondary_color}
+        />
       </Suspense>
     </div>
   );
