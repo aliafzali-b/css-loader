@@ -33,7 +33,17 @@ const Loading: FC<props> = (props) => {
   }
   if (!DynamicComponent) return null;
   return (
-    <div className='react-css-loadings'>
+    <div
+      className='react-css-loadings'
+      style={{
+        width: full_width ? '100%' : 'auto',
+        display: full_width ? 'flex' : 'block',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: vertical_padding,
+        paddingBottom: vertical_padding,
+      }}
+    >
       <DynamicComponent
         width={width}
         height={height}
